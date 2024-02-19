@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 import "./index.scss";
+import { X } from "lucide-react";
 import { AlertType } from "../../types/AlertType";
 interface IProps {
   title: string;
   icon: ReactNode;
-  iconClose: ReactNode;
   className: AlertType;
   children?: ReactNode;
   description?: string;
@@ -15,7 +15,6 @@ const Alert = ({
   icon,
   children,
   description,
-  iconClose,
 }: IProps) => {
   return (
     <div className={className}>
@@ -24,7 +23,7 @@ const Alert = ({
           {icon}
           <h3>{title}</h3>
         </div>
-        {iconClose}
+        <X style={{ cursor: "pointer" }}  />
       </div>
       <div>{children ? children : description}</div>
     </div>
