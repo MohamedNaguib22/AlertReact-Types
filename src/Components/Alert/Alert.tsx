@@ -8,6 +8,7 @@ interface IProps {
   className: AlertType;
   children?: ReactNode;
   description?: string;
+  onDelete: () => void;
 }
 const Alert = ({
   className = "alert-error",
@@ -15,6 +16,7 @@ const Alert = ({
   icon,
   children,
   description,
+  onDelete,
 }: IProps) => {
   return (
     <div className={className}>
@@ -23,7 +25,7 @@ const Alert = ({
           {icon}
           <h3>{title}</h3>
         </div>
-        <X style={{ cursor: "pointer" }} />
+        <X onClick={onDelete} style={{ cursor: "pointer" }} />
       </div>
       <div>{children ? children : description}</div>
     </div>

@@ -1,7 +1,7 @@
 import { AlertTriangle, Ban, Bell, CheckCheck, Info } from "lucide-react";
 import { ReactNode } from "react";
 import { AlertType } from "../types/AlertType";
-interface IAlert {
+export interface IAlert {
   id: number;
   title: string;
   icon: ReactNode;

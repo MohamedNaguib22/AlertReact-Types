@@ -1,20 +1,29 @@
+import { useState } from "react";
 import Alert from "./Components/Alert/Alert";
 import { alertData } from "./Data/AlertData";
 
 const App = () => {
-  
+  // ! Hooks
+  const [alert, setAlerts] = useState(alertData);
+
+  //  ** AlertFunction
+  const handelDelete = (id:number) => {
+    const newData = alert.filter((i) => i.id !== id);
+    setAlerts(newData);
+  };
   // ** Render
-  const dataAlert = alertData.map((alert) => (
+  const dataAlert = alert.map((ale) => (
     <Alert
-      className={alert.className}
-      icon={alert.icon}
-      title={alert.title}
-      description={alert.description}
-      key={alert.id}
+      className={ale.className}
+      icon={ale.icon}
+      title={ale.title}
+      description={ale.description}
+      key={ale.id}
+      onDelete={()=>handelDelete(ale.id)}
     >
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita est
-      corporis perferendis minus? Doloremque corporis vitae sunt odio sint quo
-      nobis magnam exercitationem tenetur fugiat.
+      n ty Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
+      est corporis perferendis minus? Doloremque corporis vitae sunt odio sint
+      quo nobis magnam exercitationem tenetur fugiat.
     </Alert>
   ));
 
