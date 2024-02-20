@@ -23,7 +23,7 @@ const Alert = ({
           {icon}
           <h3>{title}</h3>
         </div>
-        <X style={{ cursor: "pointer" }}  />
+        <X style={{ cursor: "pointer" }} />
       </div>
       <div>{children ? children : description}</div>
     </div>

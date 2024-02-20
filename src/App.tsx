@@ -2,6 +2,7 @@ import Alert from "./Components/Alert/Alert";
 import { alertData } from "./Data/AlertData";
 
 const App = () => {
+  
   // ** Render
   const dataAlert = alertData.map((alert) => (
     <Alert
@@ -16,6 +17,7 @@ const App = () => {
       nobis magnam exercitationem tenetur fugiat.
     </Alert>
   ));
+
   return (
     <div style={{ paddingLeft: "50px", paddingRight: "50px" }}>{dataAlert}</div>
   );
